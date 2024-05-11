@@ -62,7 +62,7 @@ export default function Login() {
   };
 
   return (
-    <Layout title="Login">
+    <Layout title="Login" isAuthPage>
       <div className="auth-container">
         <div className="auth-illustration">
           <div className="auth-info">

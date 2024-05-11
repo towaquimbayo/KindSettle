@@ -82,7 +82,7 @@ export default function Register() {
   }
 
   return (
-    <Layout title="Register">
+    <Layout title="Register" isAuthPage>
       <div className="auth-container">
         <div className="auth-illustration">
           <div className="auth-info">
