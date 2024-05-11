@@ -3,6 +3,7 @@ import "./css/global.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import LandingPage from "./components/LandingPage/LandingPage";
 import AlimonyClaim from "./pages/AlimonyClaim";
 import AlimonyCalculator from "./pages/AlimonyCalculator";
 import TransactionHistory from "./pages/TransactionHistory";
