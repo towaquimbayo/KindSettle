@@ -19,9 +19,13 @@ export default function Layout({
         <meta charSet="utf-8" />
         <title>{isLandingPage ? "KindSettle" : `${title} | KindSettle`}</title>
       </Helmet>
-      {!isAuthPage && <Navbar transparent={isLandingPage} />}
-      {isAuthPage ? children : <div id="wrapper">{children}</div>}
-      {!isAuthPage && <Footer />}
+      {isAuthPage ? children : (
+        <>
+          <Navbar transparent={isLandingPage} />
+          <div id="wrapper">{children}</div>
+          <Footer />
+        </>
+      )}
     </>
   );
 }
