@@ -1,6 +1,5 @@
-import mongoose from "mongoose"
+import { connect, ConnectOptions } from "couchbase";
 
-export const connectDB = (url: string) => {
-    mongoose.set("strictQuery", false);
-    return mongoose.connect(url)
-} 
+export const connectDB = (url: string, options: ConnectOptions) => {
+  return connect(url, options);
+};

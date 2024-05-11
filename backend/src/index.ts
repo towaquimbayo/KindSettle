@@ -9,6 +9,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import { ConnectOptions } from 'couchbase'
 
 const port = process.env.PORT || 8080;
 const clientProdUrl = process.env.CLIENT_PROD_URL || '';
@@ -41,7 +42,13 @@ app.use(errorHandlerMiddleware)
 
 const start = async () => {
     try {
-        await connectDB(process.env.MONGO_URI);
+        const connectOptions: ConnectOptions = {
+            username: process.env.CB_USERNAME,
+            password: process.env.CB_PASSWORD,
+            configProfile: "wanDevelopment",
+        };
+
+        await connectDB(process.env.CB_URI, connectOptions);
         app.listen(port, () => console.log(`Server listening on port ${port}...`))
     } catch (err) {
         console.log(err);
