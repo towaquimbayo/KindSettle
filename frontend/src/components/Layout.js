@@ -8,13 +8,15 @@ export default function Layout({ title, isLandingPage = false, children }) {
     document.title = isLandingPage ? "KindSettle" : `${title} | KindSettle`;
   }
 
+  const isAuthPage = !(title === "Login" || title === "Register");
+
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{isLandingPage ? "KindSettle" : `${title} | KindSettle`}</title>
       </Helmet>
-      <div id="wrapper">{children}</div>
+      {isAuthPage ? <div id="wrapper">{children}</div> : children}
     </>
   );
 }
