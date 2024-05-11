@@ -6,6 +6,8 @@ import Register from "./pages/Register";
 import AlimonyClaim from "./pages/AlimonyClaim";
 import AlimonyCalculator from "./pages/AlimonyCalculator";
 import TransactionHistory from "./pages/TransactionHistory";
+import Profile from "./pages/Profile";
+import MyClaims from "./pages/MyClaims";
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
       <Route path="/alimony-claim" element={<AlimonyClaim />} />
       <Route path="/alimony-calculator" element={<AlimonyCalculator />} />
       <Route path="/transaction-history" element={<TransactionHistory />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/my-claims" element={<MyClaims />} />
     </Routes>
   );
 }
