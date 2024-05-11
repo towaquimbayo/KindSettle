@@ -22,7 +22,7 @@
 .navLinksContainer {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .navLink {

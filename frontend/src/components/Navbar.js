@@ -24,7 +24,10 @@ export default function Navbar({ transparent = false }) {
           </NavLink>
           {isLoggedIn && (
             <>
-              <NavLink to="/alimony-claim" className="navLink">
+              <NavLink to="/my-claims" className="navLink">
+                My Claims
+              </NavLink>
+              <NavLink to="/transaction-history" className="navLink">
                 Transaction History
               </NavLink>
               <NavLink className="navLink" to="/profile">
