@@ -1,10 +1,10 @@
 import React from "react";
-import "./ArticleSection.css";
+import "./Cards.css";
 import payment from "../../img/payment.png";
 import profile from "../../img/profile.png";
 import calculate from "../../img/calculate.png";
 
-const ArticleSection = () => {
+const Cards = () => {
   return (
     <div>
       <h1 className="header">How it works</h1>
@@ -52,4 +52,4 @@ const ArticleSection = () => {
   );
 };
 
-export default ArticleSection;
+export default Cards;

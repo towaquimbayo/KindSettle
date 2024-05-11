@@ -1,12 +1,12 @@
 import React from 'react'
 import HeroSection from '../HeroSection/HeroSection'
-import ArticleSection from '../ArticleSection/ArticleSection';
+import Cards from '../Cards/Cards';
 
 const LandingPage = () => {
   return (
     <div>
       <HeroSection />
-      <ArticleSection />  
+      <Cards />  
     </div>
   )
 }
