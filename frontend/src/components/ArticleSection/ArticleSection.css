@@ -1,0 +1,41 @@
+.flex-container {
+  padding: 30px;
+  display: flex;
+}
+
+.flex-item {
+  flex: 1;
+  display: flex;
+  
+}
+
+.column {
+  flex: 1;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  border-bottom: 5px solid green;
+  box-shadow: 0 0 5px #ccc;
+  margin: 10px;
+  
+}
+
+.column img {
+  max-width: 100%;
+  height: auto;
+}
+
+.header {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  color: green;
+  padding: 40px;
+}
+
+p {
+  padding-top: 10px;
+  font-size:   1 em;
+}
