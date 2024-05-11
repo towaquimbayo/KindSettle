@@ -1,0 +1,95 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--secondaryColor);
+  color: black;
+  border-top: 1px solid #e7e7e7;
+}
+
+.footer .footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 7rem 2rem;
+}
+
+.footer .footerContainer .footerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer .footerContainer .footerColumn:first-child {
+  width: 30%;
+}
+
+.footer .footerContainer .footerColumn .footerLogo {
+  width: 300px;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  margin-bottom: 1rem;
+}
+
+.footer .footerContainer .footerColumn span,
+.footer .footerContainer .footerColumn a {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-decoration: none;
+  color: #858585;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.footer .footerContainer .footerColumn a:hover {
+  color: var(--primaryColor);
+}
+
+.footer .footerContainer .footerColumn .newsletterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer .footerContainer .footerColumn .newsletterForm form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.footer .footerContainer .footerColumn .newsletterForm form input {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 13px 1rem;
+  border: solid 1px #e7e7e7;
+  border-radius: 0.5rem 0 0 0.5rem;
+  width: 100%;
+  outline: none;
+}
+
+.footer .footerContainer .footerColumn .newsletterForm form button {
+  max-width: fit-content;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.footer .footerContainer .footerColumn h3 {
+  font-family: "Noto Serif", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.footer .footerBottom {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 0;
+  color: #858585;
+}
