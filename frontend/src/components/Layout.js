@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "./Navbar";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 export default function Layout({
   title,
@@ -21,6 +21,7 @@ export default function Layout({
       </Helmet>
       {!isAuthPage && <Navbar transparent={isLandingPage} />}
       {isAuthPage ? children : <div id="wrapper">{children}</div>}
+      {!isAuthPage && <Footer />}
     </>
   );
 }
