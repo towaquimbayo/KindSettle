@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import AlertMessage from "../components/AlertMessage";
 import "../css/claimform.css";
 import { BiEdit } from "react-icons/bi";
+import ClaimSuccessForm from "../components/ClaimSuccesForm";
 
 export default function AlimonyClaim() {
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ export default function AlimonyClaim() {
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
   const [formErrors, setFormErrors] = useState({});
+  const [claimSuccess, setClaimSuccess] = useState(false);
 
   function handleOnChange(e, key = "", childrenIndex = null) {
     if (key) {
@@ -100,7 +102,10 @@ export default function AlimonyClaim() {
     // fetch("/api/claim", { method: "POST", body: JSON.stringify(form) });
 
     console.log("Sending Form to Server!", form);
-    setTimeout(() => setLoading(false), 1000);
+    setTimeout(() => {
+      setLoading(false);
+      setClaimSuccess(true);
+    }, 1000);
   }
 
   function handleNext(e) {
@@ -832,18 +837,20 @@ export default function AlimonyClaim() {
 
   return (
     <Layout title="Create an Alimony Claim">
-      <div className="claimContainer">
-        <div className="claimProgressbarContainer">
-          <div className="claimProgressbar">
-            <div
-              className="claimProgressbarFill"
-              style={{ width: `${(currentStep / totalStep) * 100}%` }}
-            ></div>
+      {claimSuccess ? <ClaimSuccessForm /> : (
+        <div className="claimContainer">
+          <div className="claimProgressbarContainer">
+            <div className="claimProgressbar">
+              <div
+                className="claimProgressbarFill"
+                style={{ width: `${(currentStep / totalStep) * 100}%` }}
+              ></div>
+            </div>
           </div>
+          {errorMsg && <AlertMessage type="error" msg={errorMsg} />}
+          {ClaimForm()}
         </div>
-        {errorMsg && <AlertMessage type="error" msg={errorMsg} />}
-        {ClaimForm()}
-      </div>
+      )}
     </Layout>
   );
 }
