@@ -55,6 +55,14 @@
   margin-bottom: 1.5rem;
 }
 
+.claimContainer .claimFormContainer .description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #858585;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
 .claimContainer .claimFormContainer .formButtons {
   display: flex;
   align-items: center;
@@ -65,4 +73,42 @@
 
 .claimContainer .claimFormContainer .formButtons button {
   min-width: 10rem;
+}
+
+.claimFormContainer .formReviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.claimFormContainer .formReviewSection .formReviewHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.claimFormContainer .formReviewSection .formReviewHeading h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: black;
+}
+
+.claimFormContainer .formReviewSection .formReviewData {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.claimFormContainer .formReviewSection .formReviewData span {
+  font-size: 0.9rem;
+}
+.claimFormContainer .formReviewSection .formReviewData .value {
+  font-weight: 600;
+}
+
+.claimFormContainer hr {
+  margin-bottom: 2rem;
+  border: 0;
+  border-top: 1px solid #ccc;
 }

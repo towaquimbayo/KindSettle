@@ -6,12 +6,13 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import AlertMessage from "../components/AlertMessage";
 import "../css/claimform.css";
+import { BiEdit } from "react-icons/bi";
 
 export default function AlimonyClaim() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const totalStep = 5;
+  const totalStep = 7;
   let [currentStep, setCurrentStep] = useState(0);
   const [form, setForm] = useState({
     claimState: "",
@@ -39,14 +40,11 @@ export default function AlimonyClaim() {
       postalCode: "",
       country: "",
     },
-    numChildren: 1,
-    childrenInfo: [
-      {
-        firstName: "",
-        lastName: "",
-        dob: "",
-      },
-    ],
+    numChildren: "1",
+    childrenInfo: [],
+    custodyPercentage: "",
+    monthlyNetIncome: "",
+    monthlyDeductions: "",
   });
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
@@ -143,12 +141,93 @@ export default function AlimonyClaim() {
           setErrorMsg("Please enter the number of children to claim.");
           return;
         }
+        const childrenInfo = Array.from(
+          { length: parseInt(form.numChildren) },
+          () => ({
+            firstName: "",
+            lastName: "",
+            dob: "",
+          })
+        );
+        setForm((prev) => ({ ...prev, childrenInfo }));
+        setFormErrors((prev) => ({ ...prev, childrenInfo }));
+        break;
+      case 4:
+        for (let i = 0; i < parseInt(form.numChildren); i++) {
+          if (
+            !form.childrenInfo[i].firstName ||
+            !form.childrenInfo[i].lastName ||
+            !form.childrenInfo[i].dob
+          ) {
+            setErrorMsg("Please fill out all mandatory fields.");
+            return;
+          }
+        }
+        break;
+      case 5:
+        if (!form.custodyPercentage) {
+          setErrorMsg("Please enter the custody percentage.");
+          return;
+        }
+        break;
+      case 6:
+        if (!form.monthlyNetIncome || !form.monthlyDeductions) {
+          setErrorMsg("Please fill out all mandatory fields.");
+          return;
+        }
         break;
       default:
         return;
     }
     setCurrentStep((prev) => prev + 1);
     setErrorMsg("");
+    window.scrollTo(0, 0);
+    console.log("Form Data:", form);
+  }
+
+  function childrenInfoForm() {
+    let childrenForm = [];
+    for (let i = 0; i < parseInt(form.numChildren); i++) {
+      childrenForm.push(
+        <div key={i}>
+          {i === 0 ? (
+            <h1>Child {i + 1} Information</h1>
+          ) : (
+            <h1 style={{ marginTop: "1rem" }}>Child {i + 1} Information</h1>
+          )}
+          <div className="formRow">
+            <Field
+              label="First Name"
+              name="firstName"
+              placeholder="John"
+              value={form.childrenInfo[i].firstName}
+              onChange={(e) => handleOnChange(e, "childrenInfo", i)}
+              error={formErrors?.childrenInfo?.[i]?.firstName}
+            />
+            <Field
+              label="Last Name"
+              name="lastName"
+              placeholder="Doe"
+              value={form.childrenInfo[i].lastName}
+              onChange={(e) => handleOnChange(e, "childrenInfo", i)}
+              error={formErrors?.childrenInfo?.[i]?.lastName}
+            />
+          </div>
+          <div className="formRow">
+            <Field
+              label="Date of Birth"
+              name="dob"
+              placeholder="MM/DD/YYYY"
+              value={form.childrenInfo[i].dob}
+              onChange={(e) => handleOnChange(e, "childrenInfo", i)}
+              error={formErrors?.childrenInfo?.[i]?.dob}
+              halfWidth
+            />
+          </div>
+        </div>
+      );
+    }
+    return childrenForm;
   }
 
   function ClaimForm() {
@@ -398,59 +477,6 @@ export default function AlimonyClaim() {
                 halfWidth
               />
             </div>
-          <div className="formButtons">
-            <Button
-              title="Back to Previous Step"
-              text="Back"
-              onClick={() => setCurrentStep((prev) => prev - 1)}
-              outline
-            />
-            <Button
-              title="Next Step"
-              text="Next"
-              type="submit"
-              loading={loading}
-            />
-          </div>
-        </form>
-        )
-      case 4:
-        return (
-          <form className="claimFormContainer" onSubmit={handleNext}>
-            {form.childrenInfo.map((child, index) => (
-              <>
-                <h1>Child {index + 1} Information</h1>
-                <div className="formRow">
-                  <Field
-                    label="First Name"
-                    name="firstName"
-                    placeholder="John"
-                    value={child.firstName}
-                    onChange={(e) => handleOnChange(e, "childrenInfo", index)}
-                    error={formErrors?.childrenInfo?.firstName}
-                  />
-                  <Field
-                    label="Last Name"
-                    name="lastName"
-                    placeholder="Doe"
-                    value={child.lastName}
-                    onChange={(e) => handleOnChange(e, "childrenInfo", index)}
-                    error={formErrors?.childrenInfo?.lastName}
-                  />
-                </div>
-                <div className="formRow">
-                  <Field
-                    label="Date of Birth"
-                    name="dob"
-                    placeholder="MM/DD/YYYY"
-                    value={child.dob}
-                    onChange={(e) => handleOnChange(e, "childrenInfo", index)}
-                    error={formErrors?.childrenInfo?.dob}
-                    halfWidth
-                  />
-                </div>
-              </>
-            ))}
             <div className="formButtons">
               <Button
                 title="Back to Previous Step"
@@ -461,6 +487,308 @@ export default function AlimonyClaim() {
               <Button
                 title="Next Step"
                 text="Next"
+                type="submit"
+                loading={loading}
+              />
+            </div>
+          </form>
+        );
+      case 4:
+        return (
+          <form className="claimFormContainer" onSubmit={handleNext}>
+            {childrenInfoForm()}
+            <div className="formButtons">
+              <Button
+                title="Back to Previous Step"
+                text="Back"
+                onClick={() => setCurrentStep((prev) => prev - 1)}
+                outline
+              />
+              <Button
+                title="Next Step"
+                text="Next"
+                type="submit"
+                loading={loading}
+              />
+            </div>
+          </form>
+        );
+      case 5:
+        return (
+          <form className="claimFormContainer" onSubmit={handleNext}>
+            <h1>Physical Custody Time Spent</h1>
+            <p className="description">
+              Provide the approximate percentage of time your children are under
+              your direct care and supervision. This helps us accurately assess
+              custody arrangements.
+            </p>
+            <div className="formRow">
+              <Field
+                label="Custody Percentage"
+                name="custodyPercentage"
+                placeholder="50%"
+                value={form.custodyPercentage}
+                onChange={handleOnChange}
+                error={formErrors?.custodyPercentage}
+                halfWidth
+              />
+            </div>
+            <div className="formButtons">
+              <Button
+                title="Back to Previous Step"
+                text="Back"
+                onClick={() => setCurrentStep((prev) => prev - 1)}
+                outline
+              />
+              <Button
+                title="Next Step"
+                text="Next"
+                type="submit"
+                loading={loading}
+              />
+            </div>
+          </form>
+        );
+      case 6:
+        return (
+          <form className="claimFormContainer" onSubmit={handleNext}>
+            <h1>Monthly Net Income</h1>
+            <div className="formRow">
+              <Field
+                label="Monthly Net Income"
+                name="monthlyNetIncome"
+                placeholder="$1000"
+                value={form.monthlyNetIncome}
+                onChange={handleOnChange}
+                error={formErrors?.monthlyNetIncome}
+                halfWidth
+              />
+            </div>
+            <h1 style={{ marginTop: "1rem" }}>Total Monthly Deductions</h1>
+            <div className="formRow">
+              <Field
+                label="Monthly Deductions"
+                name="monthlyDeductions"
+                placeholder="$1000"
+                value={form.monthlyDeductions}
+                onChange={handleOnChange}
+                error={formErrors?.monthlyDeductions}
+                halfWidth
+              />
+            </div>
+            <div className="formButtons">
+              <Button
+                title="Back to Previous Step"
+                text="Back"
+                onClick={() => setCurrentStep((prev) => prev - 1)}
+                outline
+              />
+              <Button
+                title="Review Claim"
+                text="Review"
+                type="submit"
+                loading={loading}
+              />
+            </div>
+          </form>
+        );
+      case 7:
+        return (
+          <form className="claimFormContainer" onSubmit={handleSubmit}>
+            <h1>Review My Claim</h1>
+            <div className="formReviewSection">
+              <div className="formReviewHeading">
+                <h2>What state is your child support case located?</h2>
+                <button className="link" onClick={() => setCurrentStep(0)}>
+                  Change
+                  <BiEdit />
+                </button>
+              </div>
+              <div className="formReviewData">
+                <span>Claim State</span>
+                <span className="value">{form.claimState}</span>
+              </div>
+            </div>
+            <hr />
+            <div className="formReviewSection">
+              <div className="formReviewHeading">
+                <h2>Personal Information</h2>
+                <button className="link" onClick={() => setCurrentStep(1)}>
+                  Change
+                  <BiEdit />
+                </button>
+              </div>
+              <div className="formReviewData">
+                <span>First Name</span>
+                <span className="value">{form.userInfo.firstName}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Last Name</span>
+                <span className="value">{form.userInfo.lastName}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Date of Birth</span>
+                <span className="value">{form.userInfo.dob}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Phone</span>
+                <span className="value">{form.userInfo.phone}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Email</span>
+                <span className="value">{form.userInfo.email}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Street Address</span>
+                <span className="value">{form.userInfo.street}</span>
+              </div>
+              <div className="formReviewData">
+                <span>City</span>
+                <span className="value">{form.userInfo.city}</span>
+              </div>
+              <div className="formReviewData">
+                <span>State</span>
+                <span className="value">{form.userInfo.state}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Postal Code</span>
+                <span className="value">{form.userInfo.postalCode}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Country</span>
+                <span className="value">{form.userInfo.country}</span>
+              </div>
+            </div>
+            <hr />
+            <div className="formReviewSection">
+              <div className="formReviewHeading">
+                <h2>Co-Parent Personal Information</h2>
+                <button className="link" onClick={() => setCurrentStep(2)}>
+                  Change
+                  <BiEdit />
+                </button>
+              </div>
+              <div className="formReviewData">
+                <span>First Name</span>
+                <span className="value">{form.coparentInfo.firstName}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Last Name</span>
+                <span className="value">{form.coparentInfo.lastName}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Date of Birth</span>
+                <span className="value">{form.coparentInfo.dob}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Phone</span>
+                <span className="value">{form.coparentInfo.phone}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Email</span>
+                <span className="value">{form.coparentInfo.email}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Street Address</span>
+                <span className="value">{form.coparentInfo.street}</span>
+              </div>
+              <div className="formReviewData">
+                <span>City</span>
+                <span className="value">{form.coparentInfo.city}</span>
+              </div>
+              <div className="formReviewData">
+                <span>State</span>
+                <span className="value">{form.coparentInfo.state}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Postal Code</span>
+                <span className="value">{form.coparentInfo.postalCode}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Country</span>
+                <span className="value">{form.coparentInfo.country}</span>
+              </div>
+            </div>
+            <hr />
+            <div className="formReviewSection">
+              <div className="formReviewHeading">
+                <h2>Number of Children to Claim</h2>
+                <button className="link" onClick={() => setCurrentStep(3)}>
+                  Change
+                  <BiEdit />
+                </button>
+              </div>
+              <div className="formReviewData">
+                <span>Number of Children</span>
+                <span className="value">{form.numChildren}</span>
+              </div>
+            </div>
+            <hr />
+            {Object.values(form.childrenInfo).map((child, index) => (
+              <div key={index} className="formReviewSection">
+                <div className="formReviewHeading">
+                  <h2>Child {index + 1} Information</h2>
+                  <button className="link" onClick={() => setCurrentStep(4)}>
+                    Change
+                    <BiEdit />
+                  </button>
+                </div>
+                <div className="formReviewData">
+                  <span>Child {index + 1} First Name</span>
+                  <span className="value">{child.firstName}</span>
+                </div>
+                <div className="formReviewData">
+                  <span>Child {index + 1} Last Name</span>
+                  <span className="value">{child.lastName}</span>
+                </div>
+                <div className="formReviewData">
+                  <span>Child {index + 1} Date of Birth</span>
+                  <span className="value">{child.dob}</span>
+                </div>
+              </div>
+            ))}
+            <hr />
+            <div className="formReviewSection">
+              <div className="formReviewHeading">
+                <h2>Physical Custody Time Spent</h2>
+                <button className="link" onClick={() => setCurrentStep(5)}>
+                  Change
+                  <BiEdit />
+                </button>
+              </div>
+              <div className="formReviewData">
+                <span>Custody Percentage</span>
+                <span className="value">{form.custodyPercentage}</span>
+              </div>
+            </div>
+            <hr />
+            <div className="formReviewSection">
+              <div className="formReviewHeading">
+                <h2>Monthly Net Income</h2>
+                <button className="link" onClick={() => setCurrentStep(6)}>
+                  Change
+                  <BiEdit />
+                </button>
+              </div>
+              <div className="formReviewData">
+                <span>Monthly Net Income</span>
+                <span className="value">{form.monthlyNetIncome}</span>
+              </div>
+              <div className="formReviewData">
+                <span>Monthly Deductions</span>
+                <span className="value">{form.monthlyDeductions}</span>
+              </div>
+            </div>
+            <div className="formButtons">
+              <Button
+                title="Back to Previous Step"
+                text="Back"
+                onClick={() => setCurrentStep((prev) => prev - 1)}
+                outline
+              />
+              <Button
+                title="Submit Claim"
+                text="Submit Claim"
                 type="submit"
                 loading={loading}
               />

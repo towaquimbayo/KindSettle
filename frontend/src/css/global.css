@@ -150,16 +150,23 @@ input, textarea, button {
   animation: btnSpinner 1s infinite linear;
 }
 
+.link,
 .linkAlt {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   font-size: 1rem;
-  font-weight: 400;
-  color: #4d4d4d;
+  font-weight: 600;
+  color: var(--primaryColor);
+  background-color: transparent;
+  border: none;
   text-decoration: none;
   -webkit-transition: all ease-in-out 0.3s;
   -moz-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
+  cursor: pointer;
 }
 
 .link:hover,
