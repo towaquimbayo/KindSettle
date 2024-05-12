@@ -1,0 +1,68 @@
+.claimContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+
+.claimContainer .claimProgressbarContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.claimContainer .claimProgressbarContainer .claimProgressbar {
+  width: 100%;
+  height: 1rem;
+  border-radius: 10px;
+  background-color: #e6e6e6;
+  padding: 3px;
+}
+
+.claimContainer
+  .claimProgressbarContainer
+  .claimProgressbar
+  .claimProgressbarFill {
+  height: 100%;
+  width: 0;
+  background-color: var(--primaryColor);
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  animation: progress 1s linear;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+}
+
+.claimContainer .claimFormContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 3rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+}
+
+.claimContainer .claimFormContainer h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 1.5rem;
+}
+
+.claimContainer .claimFormContainer .formButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.claimContainer .claimFormContainer .formButtons button {
+  min-width: 10rem;
+}

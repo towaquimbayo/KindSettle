@@ -6,7 +6,6 @@
 .flex-item {
   flex: 1;
   display: flex;
-  
 }
 
 .column {
@@ -18,7 +17,6 @@
   border-bottom: 5px solid green;
   box-shadow: 0 0 5px #ccc;
   margin: 10px;
-  
 }
 
 .column img {
@@ -33,9 +31,4 @@
   text-align: center;
   color: green;
   padding: 40px;
-}
-
-p {
-  padding-top: 10px;
-  font-size:   1 em;
 }
