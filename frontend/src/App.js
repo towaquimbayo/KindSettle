@@ -9,7 +9,7 @@ import AlimonyCalculator from "./pages/AlimonyCalculator";
 import TransactionHistory from "./pages/TransactionHistory";
 import Profile from "./pages/Profile";
 import MyClaims from "./pages/MyClaims";
-import LandingPage from "./components/LandingPage/LandingPage";
+
 
 export default function App() {
   return (
