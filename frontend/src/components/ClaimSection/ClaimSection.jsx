@@ -5,23 +5,24 @@ import right from "../../img/KindsettleVectorRight.png";
 
 const ClaimSection = () => {
   return (
-    <div>
+    <div classame="container">
       <div className="heading-paragraph-section">
-        <div className="corner-left">
-          <img src={left} alt="left logo" />
+        <div className="corner-top-right">
+          <img src={right} alt="left logo" />
         </div>
-
-        <h2>Resolve Support Matters Smoothly</h2>
-        <p>
-          Start your journey toward balanced agreements today. Join our platform
-          and bring clarity, fairness, and ease to child support mediation.
-        </p>
+        <div className="content">
+          <h2>Resolve Support Matters Smoothly</h2>
+          <p>
+            Start your journey toward balanced agreements today. Join our
+            platform and bring clarity, fairness, and ease to child support
+            mediation.
+          </p>
+          <button className="button-section">Start a claim</button>
+        </div>
+        <div className="corner-bottom-left">
+          <img src={left} alt="right logo" />
+        </div>
       </div>
-      <div className="corner-right">
-        <img src={right} alt="right logo" />
-      </div>
-
-      <button className="button-section">Start a claim</button>
     </div>
   );
 };

@@ -1,21 +1,49 @@
-.heading-paragraph-section {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500vh;
 }
 
-.heading-paragraph-section h2 {
+.heading-paragraph-section {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.corner-top-right {
+  position: absolute;
+  right: 0;
+  margin: -25px 0px; 
+}
+
+.corner-bottom-left {
+  position: absolute;
+  left: 0;
+  margin: 40px 0px;
+  
+}
+.content{
+  margin: 100px auto; 
+  max-width: 600px; 
+  padding: 20px 0px;
+  
+}
+.content h2 {
+  color: green;
   font-size: 32px;
   margin-bottom: 10px;
-  color: green;
-  padding-bottom: 10px;
+  
+}
+.content p {
+  
+  margin-bottom: 3px;
+  
 }
 
-.heading-paragraph-section p {
-  font-size: 16px;
-  line-height: 1.6;
-  text-align: center;
-}
 .button-section {
   margin-top: 30px;
   background-color: green;
@@ -27,11 +55,4 @@
   font-size: 1.2em;
   border-radius: 5px;
 }
-.corner-left {
-  position: absolute;
-    left: 0;
-}
-.corner-right {
-  position: absolute;
-  right: 0;
-}
+
