@@ -25,7 +25,7 @@ body {
   padding: 0;
 }
 
-input, textarea {
+input, textarea, button {
   font-family: "Inter", sans-serif;
 }
 
@@ -191,6 +191,26 @@ input, textarea {
   -moz-animation: fadeIn 1s ease-in-out infinite alternate;
   -ms-animation: fadeIn 1s ease-in-out infinite alternate;
   -o-animation: fadeIn 1s ease-in-out infinite alternate;
+}
+
+.pageHeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.pageHeaderContainer .pageHeader h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.pageHeaderContainer .pageHeader p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #858585;
 }
 
 @keyframes fadeIn {
