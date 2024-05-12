@@ -42,7 +42,7 @@ export const loginValidation = async (req: Request, res: Response, next: NextFun
             });
             return;
         }
-        req.userId = user._id;
+        req.userId = user.id;
         next();
     } catch (err) {
         console.error('Error occurred while validating login: ', err)

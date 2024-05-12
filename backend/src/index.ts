@@ -1,19 +1,19 @@
-import express from 'express'
-const app = express()
-import { connectDB } from './db/connect'
-import { notFound } from './middleware/not-found'
-import { errorHandlerMiddleware } from './middleware/error-handler'
-import authRoute from './routes/auth'
-import protectedRoutes from './routes/protected'
-import dotenv from 'dotenv'
-dotenv.config()
+import express from "express";
+const app = express();
+import { connectDB } from "./db/connect";
+import { notFound } from "./middleware/not-found";
+import { errorHandlerMiddleware } from "./middleware/error-handler";
+import authRoute from "./routes/auth";
+import protectedRoutes from "./routes/protected";
+import dotenv from "dotenv";
+dotenv.config();
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { ConnectOptions } from 'couchbase'
+import { ConnectOptions } from "couchbase";
 
 const port = process.env.PORT || 8080;
-const clientProdUrl = process.env.CLIENT_PROD_URL || '';
-const clientDevUrl = process.env.CLIENT_DEV_URL || '';
+const clientProdUrl = process.env.CLIENT_PROD_URL || "";
+const clientDevUrl = process.env.CLIENT_DEV_URL || "";
 
 // middleware
 app.use(cookieParser());
@@ -34,26 +34,24 @@ app.use(
 );
 
 // Routes
-app.use('/api/v1/user', authRoute);
-app.use('/api/v1/protected', protectedRoutes);
-app.use(notFound)
-app.use(errorHandlerMiddleware)
-
+app.use("/api/v1/user", authRoute);
+app.use("/api/v1/protected", protectedRoutes);
+app.use(notFound);
+app.use(errorHandlerMiddleware);
 
 const start = async () => {
-    try {
-        const connectOptions = {
-            connectionString: process.env.CB_URI,
-            bucketName: process.env.CB_BUCKET,
-            username: process.env.CB_USERNAME,
-            password: process.env.CB_PASSWORD,
-        };
+  try {
+    await connectDB({
+      connectionString: process.env.CB_URI,
+      bucketName: process.env.CB_BUCKET,
+      username: process.env.CB_USERNAME,
+      password: process.env.CB_PASSWORD,
+    });
 
-        await connectDB(connectOptions);
-        app.listen(port, () => console.log(`Server listening on port ${port}...`))
-    } catch (err) {
-        console.log(err);
-    }
-}
+    app.listen(port, () => console.log(`Server listening on port ${port}...`));
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-start()
+start();

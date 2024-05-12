@@ -35,8 +35,12 @@ export const registerValidation = async (req: Request, res: Response, next: Next
             return;
         }
         next();
-    } catch (err) {
-        console.error('Error occurred while validating registration: ', err);
-        res.status(500).send({ message: messages.serverError });
+    } catch (err: any) {
+        if (err.name === "DocumentNotFoundError") {
+            next();
+        } else {
+            console.error('Error occurred while validating registration: ', err);
+            res.status(500).send({ message: messages.serverError });
+        }
     }
 }
