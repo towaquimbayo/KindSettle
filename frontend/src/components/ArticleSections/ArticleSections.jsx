@@ -3,6 +3,8 @@ import "./ArticleSections.css";
 import articleOne from "../../img/articleSectionImageOne.png";
 import articleTwo from "../../img/articleSectionImageTwo.png";
 import articleThree from "../../img/articleSectionImageThree.png";
+
+
 const ArticleSections = () => {
   return (
     <div className="article">
@@ -12,8 +14,8 @@ const ArticleSections = () => {
         </div>
         <div className="middle-column"></div>
         <div className="right-column">
-          <h2 className="content">Streamlined Calculations</h2>
-          <p className="content">
+          <h3>Streamlined Calculations</h3>
+          <p>
             Easily estimate fair child support payments with our intuitive
             calculator. Input your financial information, and our tool swiftly
             analyzes your unique situation to provide precise calculations,
@@ -25,7 +27,7 @@ const ArticleSections = () => {
 
       <div className="flex-container">
         <div className="left-column">
-          <h2>Effortless Agreement Signing</h2>
+          <h3>Effortless Agreement Signing</h3>
           <p>
             Seal the deal quickly and securely with our digital agreement
             signing feature. Avoid the hassle of paperwork and formalities by
@@ -45,7 +47,7 @@ const ArticleSections = () => {
         </div>
         <div className="middle-column"></div>
         <div className="right-column">
-          <h2>Simplified Payments and Payouts</h2>
+          <h3>Simplified Payments and Payouts</h3>
           <p>
             Manage your financial transactions with ease using our automated
             payment system. Track, schedule, and manage payments while ensuring

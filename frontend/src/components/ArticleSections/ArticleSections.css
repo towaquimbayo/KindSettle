@@ -8,15 +8,20 @@
   }
   
   .middle-column {
-    flex: 0.2; 
+    flex: 0.1; 
   }
 
   .article p {
     padding:  2px 0;
-    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+
   }
 
-  .article h2{
-    font-size: 3rem;
-    color: green;
+  .article h3{
+    font-family: "Noto Serif", serif;
+    font-size: 2rem;
+    color: var(--primaryColor);
+    padding-bottom: 10PX;
+  
   }

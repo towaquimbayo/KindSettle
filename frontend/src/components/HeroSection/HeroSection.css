@@ -18,38 +18,19 @@
   }
   
   .hero-content h1 {
-    font-size: 3em;
+    font-size: 3rem;
     margin-bottom: 20px;
-    color: #fff;
+    color: var(--secondaryColor);
+    font-family: "Noto Serif", serif;
   }
   
   .hero-content p {
     font-size: 1.5em;
-    color: #fff;
+    color: var(--secondaryColor);
     margin-bottom: 40px;
+    font-family: "Inter", sans-serif;
+  
   }
   
-  .cta-buttons {
-    display: flex;
-    justify-content: flex-start;
-  }
-  
-  .cta-button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    margin: 0 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .cta-button.primary {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .cta-button.secondary {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
+
+ 
