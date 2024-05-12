@@ -14,7 +14,7 @@
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 10px;
-  border-bottom: 5px solid green;
+  border-bottom: 5px solid  var(--primaryColor);;
   box-shadow: 0 0 5px #ccc;
   margin: 10px;
 }
@@ -29,6 +29,6 @@
   font-weight: bold;
   margin: 0;
   text-align: center;
-  color: green;
+  color: var(--primaryColor);
   padding: 40px;
 }

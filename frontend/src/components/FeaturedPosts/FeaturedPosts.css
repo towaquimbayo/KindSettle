@@ -9,7 +9,7 @@
 
 .button-post {
   background-color: #787979;
-  color: white;
+  color:  var(--secondaryColor);;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -36,8 +36,8 @@
 
 .button-section {
   margin-top: 30px;
-  background-color: green;
-  color: white;
+  background-color:  var(--primaryColor);
+  color: var(--secondaryColor);
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
@@ -47,7 +47,7 @@
 }
 
 .header-post {
-  color: green;
+  color:  var(--primaryColor);;
   text-align: center;
   margin-bottom: 20px;
 }

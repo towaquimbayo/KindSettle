@@ -49,7 +49,7 @@
   }
   
   .cta-button.secondary {
-    background-color: #28a745;
+    background-color: var(--primaryColor);;
     color: #fff;
   }
   

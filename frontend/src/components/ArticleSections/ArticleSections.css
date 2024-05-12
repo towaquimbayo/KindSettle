@@ -18,5 +18,5 @@
 
   .article h2{
     font-size: 3rem;
-    color: green;
+    color: var(--primaryColor);
   }
