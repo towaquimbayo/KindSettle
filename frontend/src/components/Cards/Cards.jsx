@@ -12,7 +12,7 @@ const Cards = () => {
       <div className="flex-container">
         <div className="flex-item">
           <div className="column">
-             {/* place holder for now  */}
+            {/* place holder for now  */}
             <a href="https:">
               <img src={calculate} alt="Calculate" />
             </a>
@@ -24,8 +24,8 @@ const Cards = () => {
             </p>
           </div>
           <div className="column">
-          {/* place holder for now  */}
-            <a href="https:"> 
+            {/* place holder for now  */}
+            <a href="https:">
               <img src={profile} alt="Profile" />
             </a>
             <h3>Reach a Fair Agreement</h3>
@@ -36,13 +36,13 @@ const Cards = () => {
             </p>
           </div>
           <div className="column">
-             {/* place holder for now  */}
+            {/* place holder for now  */}
             <a href="https:">
               <img src={payment} alt="Payment" />
             </a>
             <h3>Track and Receive Funds</h3>
             <p>
-              Track and manage transactions with  <br />
+              Track and manage transactions with <br />
               ease for on-time, stress-free payouts.
             </p>
           </div>

@@ -5,14 +5,13 @@ import articleTwo from "../../img/articleSectionImageTwo.png";
 import articleThree from "../../img/articleSectionImageThree.png";
 const ArticleSections = () => {
   return (
-    <div className= "article">
+    <div className="article">
       <div className="flex-container">
         <div className="left-column">
           <img src={articleOne} alt="Man sitting and checking with phone" />
         </div>
         <div className="middle-column"></div>
         <div className="right-column">
-     
           <h2 className="content">Streamlined Calculations</h2>
           <p className="content">
             Easily estimate fair child support payments with our intuitive
@@ -23,15 +22,16 @@ const ArticleSections = () => {
           </p>
         </div>
       </div>
-     
+
       <div className="flex-container">
         <div className="left-column">
-        
           <h2>Effortless Agreement Signing</h2>
-          <p>Seal the deal quickly and securely with our digital agreement signing feature. 
-            Avoid the hassle of paperwork and formalities by digitally reviewing and signing agreements within the platform, 
-            empowering both parties to finalize arrangements with confidence and speed.
-         
+          <p>
+            Seal the deal quickly and securely with our digital agreement
+            signing feature. Avoid the hassle of paperwork and formalities by
+            digitally reviewing and signing agreements within the platform,
+            empowering both parties to finalize arrangements with confidence and
+            speed.
           </p>
         </div>
         <div className="middle-column"></div>
@@ -45,12 +45,12 @@ const ArticleSections = () => {
         </div>
         <div className="middle-column"></div>
         <div className="right-column">
-         
           <h2>Simplified Payments and Payouts</h2>
           <p>
-          Manage your financial transactions with ease using our automated payment system. 
-          Track, schedule, and manage payments while ensuring timely payouts to recipients. 
-          Stay organized and in control of your finances with our transparent and user-friendly interface.
+            Manage your financial transactions with ease using our automated
+            payment system. Track, schedule, and manage payments while ensuring
+            timely payouts to recipients. Stay organized and in control of your
+            finances with our transparent and user-friendly interface.
           </p>
         </div>
       </div>
