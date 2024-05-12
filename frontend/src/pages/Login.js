@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import AlertMessage from "../components/AlertMessage";
 import messages from "../messages/lang/en/user.json";
 import "../css/auth.css";
+import { config } from "../config";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -34,7 +35,8 @@ export default function Login() {
     }
 
     try {
-      const response = await fetch("http://localhost:8080" + "/api/v1/user/login", {
+      const endpoint = config.url;
+      const response = await fetch(`${endpoint}/api/v1/user/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -43,9 +45,7 @@ export default function Login() {
 
       if (response.ok) {
         const data = await response.json();
-        dispatch(
-          setUser(true)
-        );
+        dispatch(setUser(true));
         setLoading(false);
         navigate("/");
       } else {
@@ -73,23 +73,27 @@ export default function Login() {
               <h1>Building a brighter future for your children.</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur
-                adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua.
               </p>
             </div>
             <div className="review">
               <p>
                 <q>
                   <i>
-                    Simply unbelievable! I am really satisfied with the quality of
-                    this app. This has saved me so much time and money.
+                    Simply unbelievable! I am really satisfied with the quality
+                    of this app. This has saved me so much time and money.
                   </i>
                 </q>
               </p>
               <div className="reviewer">
                 <div className="avatar">
-                  <img src="https://api.dicebear.com/8.x/avataaars/svg?seed=Whiskers" alt="avatar" width={35} />
+                  <img
+                    src="https://api.dicebear.com/8.x/avataaars/svg?seed=Whiskers"
+                    alt="avatar"
+                    width={35}
+                  />
                 </div>
                 <div>
                   <p className="name">John Doe</p>

@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import AlertMessage from "../components/AlertMessage";
 import messages from "../messages/lang/en/user.json";
 import "../css/auth.css";
+import { config } from "../config";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -45,7 +46,8 @@ export default function Register() {
     }
 
     try {
-      const response = await fetch("http://localhost:8080" + "/api/v1/user/register", {
+      const endpoint = config.url;
+      const response = await fetch(`${endpoint}/api/v1/user/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),

@@ -60,7 +60,7 @@ export const loginUser = async (req: Request, res: Response) => {
     httpOnly: true,
     secure: true,
     maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
-    domain: "localhost",
+    domain: process.env.NODE_ENV === "production" ? ".kindsettle.com" : "localhost",
     sameSite: "none",
   });
   res.send({
