@@ -1,5 +1,5 @@
-import { connect, ConnectOptions } from "couchbase";
+import { connect } from "ottoman";
 
-export const connectDB = (url: string, options: ConnectOptions) => {
-  return connect(url, options);
+export const connectDB = (options: any) => {
+  return connect(options);
 };

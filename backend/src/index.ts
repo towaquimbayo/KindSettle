@@ -42,13 +42,14 @@ app.use(errorHandlerMiddleware)
 
 const start = async () => {
     try {
-        const connectOptions: ConnectOptions = {
+        const connectOptions = {
+            connectionString: process.env.CB_URI,
+            bucketName: process.env.CB_BUCKET,
             username: process.env.CB_USERNAME,
             password: process.env.CB_PASSWORD,
-            configProfile: "wanDevelopment",
         };
 
-        await connectDB(process.env.CB_URI, connectOptions);
+        await connectDB(connectOptions);
         app.listen(port, () => console.log(`Server listening on port ${port}...`))
     } catch (err) {
         console.log(err);

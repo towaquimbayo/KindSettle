@@ -8,6 +8,7 @@ type RequestBody = {
     email: string;
     password: string
 }
+
 export const registerUser = async (req: Request, res: Response) => {
     const { name, email, password }: RequestBody = req.body;
 
