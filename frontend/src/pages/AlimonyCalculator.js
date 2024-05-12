@@ -1,14 +1,10 @@
 import { useState } from "react";
-// import { useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import { Field } from "../components/Field";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 export default function AlimonyCalculator() {
-  // const navigate = useNavigate();
-
-  // const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   const [formData, setFormData] = useState({
     monthlyPay: "",
     otherMonthlyPay: "",
@@ -17,10 +13,6 @@ export default function AlimonyCalculator() {
   });
   const [errors, setErrors] = useState({});
   const [result, setResult] = useState(null);
-
-  // useEffect(() => {
-  //   if (!isLoggedIn) navigate("/login");
-  // }, [isLoggedIn, navigate]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -104,7 +96,8 @@ export default function AlimonyCalculator() {
       <div className="pageHeaderContainer">
         <div className="pageHeader">
           <h1>Alimony Calculator</h1>
-          <p>Estimate your potential alimony payments with ease and accuracy using our simple calculator.</p>
+          <p>Estimate your potential alimony payments with ease and accuracy using our simple calculator. This calculator uses
+            the <Link to="https://divorce.com/blog/how-is-child-support-calculated/" target="_blank">Income Shares model</Link>.</p>
         </div>
       </div>
       <div className="alimonyCalculatorContainer">
