@@ -1,35 +1,55 @@
-import { Schema, model, Document } from "mongoose"
+import { Schema, model, Document } from 'ottoman';
 
 interface IUser extends Document {
     name: string;
     email: string;
     password: string;
-    date: Date;
+    dob?: Date;
+    phone?: string;
+    address?: string;
+    monthlyIncome?: number;
+    spouse?: string;
+    created: Date;
 }
 
-const UserSchema: Schema = new Schema({
-    name: {
-        type: String,
+const UserSchema = new Schema({
+    name: { 
+        type: String, 
         required: true,
         min: 3,
         max: 255
     },
-    email: {
-        type: String,
+    email: { 
+        type: String, 
         required: true,
         max: 255
     },
-    password: {
-        type: String,
+    password: { 
+        type: String, 
         required: true,
         max: 1024, //store hashes
         min: 6
     },
-    date: {
-        type: Date,
+    dob: { 
+        type: Date 
+    },
+    phone: { 
+        type: String 
+    },
+    address: { 
+        type: String 
+    },
+    monthlyIncome: { 
+        type: Number 
+    },
+    spouse: { 
+        type: String 
+    },
+    created: { 
+        type: Date, 
         default: Date.now()
     }
 })
 
-const User = model<IUser>('User', UserSchema)
+const User = model<IUser>('User', UserSchema);
 export default User;
