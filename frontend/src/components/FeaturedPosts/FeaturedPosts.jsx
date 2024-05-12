@@ -2,6 +2,7 @@ import React from "react";
 import "./FeaturedPosts.css";
 import featurePostsOne from "../../img/featurePostsOne.png";
 import featurePostsTwo from "../../img/featurePostTwo.png";
+import Button from "../Button";
 
 const FeaturedPosts = () => {
   return (
@@ -16,7 +17,16 @@ const FeaturedPosts = () => {
           />
 
           <div>
-            <button className="button-post">Co-Parenting</button>
+            <Button
+              text="Co-Parenting"
+              title="Co-Parenting"
+              customStyle={{
+                backgroundColor: "#444",
+                border: "solid 1px #444",
+              }}
+              type="submit"
+            />
+
             <h3 className="title-post">
               How Does Understanding Child <br /> Support Benefit Custodial
               Parents?
@@ -37,7 +47,16 @@ const FeaturedPosts = () => {
           />
 
           <div>
-            <button className="button-post">Mediation</button>
+            <Button
+              text="Mediation"
+              title="Mediation"
+              customStyle={{
+                backgroundColor: "#333",
+                border: "solid 1px #333",
+              }}
+              type="submit"
+            />
+
             <h3 className="title-post">
               Why is Mediation Essential for <br /> Resolving Child Support
               Disputes?
@@ -51,7 +70,12 @@ const FeaturedPosts = () => {
           </div>
         </div>
       </div>
-      <button className="button-section">View more resources</button>
+      <Button
+        text="View more resources"
+        title="View more resources"
+        customStyle={{ display: "block", margin: "0 auto" }}
+        type="submit"
+      />
     </>
   );
 };

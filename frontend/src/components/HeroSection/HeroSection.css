@@ -30,22 +30,5 @@
     margin-bottom: 40px;
   }
   
-  .cta-buttons {
-    display: flex;
-    justify-content: flex-start;
-  }
-  
-  .cta-button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    margin: 0 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .cta-button.secondary {
-    background-color: var(--primaryColor);
-    color: var(--secondaryColor);
-  }
-  
+
+ 

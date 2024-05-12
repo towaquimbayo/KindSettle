@@ -2,6 +2,7 @@ import React from "react";
 import "./ClaimSection.css";
 import left from "../../img/KindsettleVectorLeft.png";
 import right from "../../img/KindsettleVectorRight.png";
+import Button from "../Button.js";
 
 const ClaimSection = () => {
   return (
@@ -17,7 +18,13 @@ const ClaimSection = () => {
             platform and bring clarity, fairness, and ease to child support
             mediation.
           </p>
-          <button className="button-section">Start a claim</button>
+
+          <Button
+            text="Start a claim"
+            title="Start a claim"
+            customStyle={{ display: "block", margin: "0 auto" }}
+            type="submit"
+          />
         </div>
         <div className="corner-bottom-left">
           <img src={left} alt="right logo" />

@@ -3,6 +3,8 @@ import "./ArticleSections.css";
 import articleOne from "../../img/articleSectionImageOne.png";
 import articleTwo from "../../img/articleSectionImageTwo.png";
 import articleThree from "../../img/articleSectionImageThree.png";
+
+
 const ArticleSections = () => {
   return (
     <div className="article">
