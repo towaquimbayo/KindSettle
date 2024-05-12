@@ -29,7 +29,7 @@ body {
   max-width: 1600px;
   margin: 18vh auto 0;
   padding: 0 7rem;
-  min-height: 76vh;
+  min-height: 82vh;
 }
 
 .logo {
@@ -94,8 +94,8 @@ body {
 .btnPrimary {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
-  font-weight: 400;
-  padding: 12px;
+  font-weight: 500;
+  padding: 10px 12px;
   color: white;
   background-color: var(--primaryColor);
   border: solid 2px var(--primaryColor);
@@ -112,6 +112,12 @@ body {
   transition: all ease-in-out 0.3s;
 }
 
+.btnPrimary.outline {
+  background-color: transparent;
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
+}
+
 .btnPrimary.full {
   width: 100%;
 }
@@ -124,6 +130,12 @@ body {
 
 .btnPrimary:hover {
   opacity: 0.8;
+}
+
+.btnPrimary.outline:hover {
+  background-color: var(--primaryColor);
+  color: white;
+  opacity: 1;
 }
 
 .buttonSpinner {
