@@ -47,13 +47,13 @@ const start = async () => {
       username: process.env.CB_USERNAME,
       password: process.env.CB_PASSWORD,
     });
-
+    console.log("Connected to Couchbase Server");
     app.listen(port, () => {
       console.log(`Running on environment: ${process.env.NODE_ENV}`);
       console.log(`Server listening on port ${port}...`);
     });
   } catch (err) {
-    console.error("Error on server startup: ", err);
+    console.error("Error on server startup:", err);
   }
 };
 

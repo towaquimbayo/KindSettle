@@ -1,5 +1,6 @@
-import { connect } from "ottoman";
+import { connect, start } from "ottoman";
 
-export const connectDB = (options: any) => {
-  return connect(options);
+export const connectDB = async (options: any) => {
+  await connect(options);
+  await start();
 };
