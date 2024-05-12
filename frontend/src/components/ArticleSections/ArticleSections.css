@@ -1,0 +1,22 @@
+.flex-container {
+    display: flex;
+  }
+  
+  .left-column,
+  .right-column {
+    flex: 1;
+  }
+  
+  .middle-column {
+    flex: 0.2; 
+  }
+
+  .article p {
+    padding:  2px 0;
+    font-size: 1.5rem;
+  }
+
+  .article h2{
+    font-size: 3rem;
+    color: green;
+  }
