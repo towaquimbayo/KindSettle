@@ -10,6 +10,8 @@ declare global {
             JWT_LIFETIME: string;
             CLIENT_DEV_URL: string;
             CLIENT_PROD_URL: string;
+            NODEMAIL_USER: string;
+            NODEMAIL_PASS: string;
         }
     }
 }
