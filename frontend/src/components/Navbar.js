@@ -30,9 +30,6 @@ export default function Navbar({ transparent = false }) {
               <NavLink to="/transaction-history" className="navLink">
                 Transaction History
               </NavLink>
-              <NavLink className="navLink" to="/profile">
-                Profile
-              </NavLink>
               <Link
                 className="navLink"
                 onClick={() => dispatch(clearSession())}
