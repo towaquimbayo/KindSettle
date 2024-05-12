@@ -18,9 +18,11 @@ export default function Navbar({ transparent = false }) {
       setIsTransparent(currentScrollPos < 100);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (transparent) {
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [transparent]);
 
   return (
     <nav className={`navbar ${isTransparent ? "transparent" : ""}`}>
