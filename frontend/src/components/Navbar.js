@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { clearSession } from "../redux/actions/UserAction";
@@ -9,9 +10,20 @@ export default function Navbar({ transparent = false }) {
   const navigate = useNavigate();
 
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const [isTransparent, setIsTransparent] = useState(transparent);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      setIsTransparent(currentScrollPos < 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className={`navbar ${transparent ? "transparent" : ""}`}>
+    <nav className={`navbar ${isTransparent ? "transparent" : ""}`}>
       <div className="navContainer">
         <div style={{ display: "flex", alignItems: "center" }}>
           <Link to="/" className="logo">

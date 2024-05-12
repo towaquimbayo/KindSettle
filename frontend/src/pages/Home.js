@@ -1,11 +1,18 @@
 import Layout from "../components/Layout";
-import LandingPage from "../components/LandingPage/LandingPage";
-
+import HeroSection from "../components/HeroSection/HeroSection";
+import Cards from "../components/Cards/Cards";
+import ArticleSections from "../components/ArticleSections/ArticleSections";
+import FeaturedPosts from "../components/FeaturedPosts/FeaturedPosts";
+import ClaimSection from "../components/ClaimSection/ClaimSection";
 
 export default function Home() {
   return (
     <Layout isLandingPage>
-      <LandingPage />
+      <HeroSection />
+      <Cards />
+      <ArticleSections />
+      <FeaturedPosts />
+      <ClaimSection />
     </Layout>
   );
 }
