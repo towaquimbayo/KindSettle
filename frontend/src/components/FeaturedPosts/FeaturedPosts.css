@@ -52,3 +52,8 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}

@@ -13,7 +13,9 @@
 
   .article p {
     padding:  2px 0;
-    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+
   }
 
   .article h3{
