@@ -164,6 +164,10 @@ export default function Register() {
                 }}
               />
             </div>
+            <p className="terms">
+              By signing up for a Kindsettle account, I agree to the <Link to="/terms">Terms & Conditions</Link>.
+              Learn more about how we use and protect your data in our <Link to="/privacy">Privacy Policy</Link>.
+            </p>
             <Button
               type="submit"
               title="Sign Up"

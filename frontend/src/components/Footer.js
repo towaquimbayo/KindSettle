@@ -40,10 +40,10 @@ export default function Footer() {
         </div>
         <div className="footerColumn">
           <h3>Legal</h3>
-          <NavLink className="footerLink" to="/privacy-policy">
+          <NavLink className="footerLink" to="/privacy">
             Privacy Policy
           </NavLink>
-          <NavLink className="footerLink" to="/terms-and-conditions">
+          <NavLink className="footerLink" to="/terms">
             Terms & Conditions
           </NavLink>
           <NavLink className="footerLink" to="/">

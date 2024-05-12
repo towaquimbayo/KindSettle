@@ -220,6 +220,25 @@ input, textarea, button {
   color: #858585;
 }
 
+.pageHeaderContainer .legalContent p {
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+}
+
+.pageHeaderContainer .legalContent ul {
+  margin-left: 1.5rem;
+}
+
+.pageHeaderContainer .legalContent a {
+  color: var(--primaryColor);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.pageHeaderContainer .legalContent a:hover {
+  text-decoration: underline;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0.5;
