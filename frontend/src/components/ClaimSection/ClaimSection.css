@@ -14,13 +14,13 @@
 .corner-top-right {
   position: absolute;
   right: 0;
-  margin: -25px 0px;
+  margin-top: -4rem;
 }
 
 .corner-bottom-left {
   position: absolute;
   left: 0;
-  margin: 40px 0px;
+  margin-top: 6rem;
 }
 .content {
   margin: 100px auto;
@@ -28,13 +28,14 @@
   padding: 20px 0px;
 }
 .content h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
   font-family: "Noto Serif", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primaryColor);
+  margin-bottom: 1.5rem;
   
 }
 .content p {
-  margin-bottom: 3px;
-  font-family: "Inter", sans-serif;
   font-size: 1rem;
+  margin-bottom: 1.5rem;
 }

@@ -4,16 +4,14 @@ import articleOne from "../../img/articleSectionImageOne.png";
 import articleTwo from "../../img/articleSectionImageTwo.png";
 import articleThree from "../../img/articleSectionImageThree.png";
 
-
-const ArticleSections = () => {
+export default function ArticleSections() {
   return (
-    <div className="article">
-      <div className="flex-container">
-        <div className="left-column">
+    <div className="articleContainer">
+      <div className="article">
+        <div className="articleColumn">
           <img src={articleOne} alt="Man sitting and checking with phone" />
         </div>
-        <div className="middle-column"></div>
-        <div className="right-column">
+        <div className="articleColumn">
           <h3>Streamlined Calculations</h3>
           <p>
             Easily estimate fair child support payments with our intuitive
@@ -25,8 +23,8 @@ const ArticleSections = () => {
         </div>
       </div>
 
-      <div className="flex-container">
-        <div className="left-column">
+      <div className="article">
+        <div className="articleColumn">
           <h3>Effortless Agreement Signing</h3>
           <p>
             Seal the deal quickly and securely with our digital agreement
@@ -36,17 +34,15 @@ const ArticleSections = () => {
             speed.
           </p>
         </div>
-        <div className="middle-column"></div>
-        <div className="right-column">
+        <div className="articleColumn">
           <img src={articleTwo} alt="Hand shake" />
         </div>
       </div>
-      <div className="flex-container">
-        <div className="left-column">
+      <div className="article">
+        <div className="articleColumn">
           <img src={articleThree} alt="Mom and daughter" />
         </div>
-        <div className="middle-column"></div>
-        <div className="right-column">
+        <div className="articleColumn">
           <h3>Simplified Payments and Payouts</h3>
           <p>
             Manage your financial transactions with ease using our automated
@@ -58,6 +54,4 @@ const ArticleSections = () => {
       </div>
     </div>
   );
-};
-
-export default ArticleSections;
+}

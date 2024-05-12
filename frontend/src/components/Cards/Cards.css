@@ -1,49 +1,44 @@
+.homeCardsContainer {
+  padding: 5rem 7rem 7rem;
+}
+
+.header {
+  font-family: "Noto Serif", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--primaryColor);
+  margin-bottom: 2rem;
+}
+
 .flex-container {
-  padding: 30px;
   display: flex;
 }
 
 .flex-item {
   flex: 1;
   display: flex;
+  gap: 1.5rem;
 }
 
-.column {
+.homeCard {
   flex: 1;
-  padding: 30px;
+  padding: 1.5rem 2rem;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 10px;
-  border-bottom: 5px solid  var(--primaryColor);;
-  box-shadow: 0 0 5px #ccc;
-  margin: 10px;
+  border-bottom: 5px solid var(--primaryColor);
 }
 
-.column img {
+.homeCard img {
   max-width: 100%;
   height: auto;
+  object-fit: contain;
+  object-position: center center;
 }
 
-.header {
-  font-family: "Noto Serif", serif;
-  font-size: 5rem;
-  font-weight: bold;
-  margin: 0;
-  text-align: center;
-  color: var(--primaryColor);
-  padding: 40px;
+.cards-paragraph h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
 }
-
-
-cards-paragraph h3 {
-  font-family: "Noto Serif", serif;
-  font-size: 2rem;
-  padding-bottom: 10px; 
-
-}
-
-cards-paragraph p{
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-}
-

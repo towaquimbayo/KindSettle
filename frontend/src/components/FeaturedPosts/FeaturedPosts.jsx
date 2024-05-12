@@ -3,11 +3,14 @@ import "./FeaturedPosts.css";
 import featurePostsOne from "../../img/featurePostsOne.png";
 import featurePostsTwo from "../../img/featurePostTwo.png";
 import Button from "../Button";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedPosts = () => {
+  const navigate = useNavigate();
+
   return (
-    <>
-      <h1 className="header-post">Featured Posts</h1>
+    <div className="featuredPostsContainer">
+      <h1>Featured Posts</h1>
       <div className="container-post">
         <div className="column-post">
           <img
@@ -21,21 +24,23 @@ const FeaturedPosts = () => {
               text="Co-Parenting"
               title="Co-Parenting"
               customStyle={{
-                backgroundColor: "#444",
-                border: "solid 1px #444",
+                backgroundColor: "#dbdbdb",
+                border: "solid 1px #dbdbdb",
+                color: "black",
+                borderRadius: "5rem",
+                margin: "0.5rem 0",
+                fontSize: "0.9rem",
               }}
-              type="submit"
             />
 
             <h3 className="title-post">
-              How Does Understanding Child <br /> Support Benefit Custodial
-              Parents?
+              How Does Understanding Child Support Benefit Custodial Parents?
             </h3>
 
             <p className="description-post">
-              Navigating the complexities of child support can be <br />
-              daunting for many co-parents. But why is it crucial <br /> to have
-              a solid understanding of this process? In this guide,...
+              Navigating the complexities of child support can be daunting for
+              many co-parents. But why is it crucial to have a solid
+              understanding of this process? In this guide,...
             </p>
           </div>
         </div>
@@ -51,21 +56,23 @@ const FeaturedPosts = () => {
               text="Mediation"
               title="Mediation"
               customStyle={{
-                backgroundColor: "#333",
-                border: "solid 1px #333",
+                backgroundColor: "#dbdbdb",
+                border: "solid 1px #dbdbdb",
+                color: "black",
+                borderRadius: "5rem",
+                margin: "0.5rem 0",
+                fontSize: "0.9rem",
               }}
-              type="submit"
             />
 
             <h3 className="title-post">
-              Why is Mediation Essential for <br /> Resolving Child Support
-              Disputes?
+              Why is Mediation Essential for Resolving Child Support Disputes?
             </h3>
 
             <p className="description-post">
-              Mediation offers a pathway to resolving child support <br />
-              disputes without the emotional and financial toll of <br />
-              traditional court battles. But what makes mediation s..
+              Mediation offers a pathway to resolving child support disputes
+              without the emotional and financial toll of traditional court
+              battles. But what makes mediation s..
             </p>
           </div>
         </div>
@@ -73,10 +80,10 @@ const FeaturedPosts = () => {
       <Button
         text="View more resources"
         title="View more resources"
-        customStyle={{ display: "block", margin: "0 auto" }}
-        type="submit"
+        customStyle={{ margin: "0 auto" }}
+        onClick={() => navigate("/resources")}
       />
-    </>
+    </div>
   );
 };
 

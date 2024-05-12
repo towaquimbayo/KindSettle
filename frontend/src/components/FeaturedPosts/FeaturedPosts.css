@@ -1,10 +1,30 @@
+.featuredPostsContainer {
+  padding: 0 7rem 7rem;
+}
+
+.featuredPostsContainer h1 {
+  font-family: "Noto Serif", serif;
+  font-size: 2.5rem;
+  color:  var(--primaryColor);;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
 .container-post {
   display: flex;
   justify-content: center;
+  gap: 3rem;
+  padding: 2rem 0 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .column-post {
-  padding: 60px;
+  width: 100%;
+}
+
+.column-post img {
+  width: 100%;
 }
 
 .button-post {
@@ -32,8 +52,8 @@
 }
 
 .title-post {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .button-section {
@@ -46,12 +66,5 @@
   border: none;
   font-size: 1.2em;
   border-radius: 5px;
-}
-
-.header-post {
-  font-family: "Noto Serif", serif;
-  color:  var(--primaryColor);;
-  text-align: center;
-  margin-bottom: 20px;
 }
 

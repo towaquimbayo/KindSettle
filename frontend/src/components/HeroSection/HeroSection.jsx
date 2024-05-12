@@ -2,7 +2,7 @@ import React from "react";
 import "./HeroSection.css";
 import Button from "../Button.js";
 
-const HeroSection = () => {
+export default function HeroSection() {
   return (
     <div className="hero-section">
       <div className="hero-content">
@@ -14,17 +14,8 @@ const HeroSection = () => {
           straightforward agreements that benefit everyone.
         </p>
 
-        <Button
-          text="Start a claim"
-          title="Start a claim"
-          customStyle={{ display: "block", margin: "0 0" }}
-          type="submit"
-        />
-
-       
+        <Button text="Start a claim" title="Start a claim" />
       </div>
     </div>
   );
-};
-
-export default HeroSection;
+}
