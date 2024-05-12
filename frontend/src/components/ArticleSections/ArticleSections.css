@@ -8,7 +8,7 @@
   }
   
   .middle-column {
-    flex: 0.2; 
+    flex: 0.1; 
   }
 
   .article p {
@@ -16,7 +16,10 @@
     font-size: 1.5rem;
   }
 
-  .article h2{
-    font-size: 3rem;
+  .article h3{
+    font-family: "Noto Serif", serif;
+    font-size: 2rem;
     color: var(--primaryColor);
+    padding-bottom: 10PX;
+  
   }

@@ -47,6 +47,7 @@
 }
 
 .header-post {
+  font-family: "Noto Serif", serif;
   color:  var(--primaryColor);;
   text-align: center;
   margin-bottom: 20px;
