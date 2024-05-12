@@ -32,7 +32,7 @@ const FeaturedPosts = () => {
               Parents?
             </h3>
 
-            <p className="description-post ">
+            <p className="description-post">
               Navigating the complexities of child support can be <br />
               daunting for many co-parents. But why is it crucial <br /> to have
               a solid understanding of this process? In this guide,...

@@ -35,14 +35,14 @@
 }
 
 
-h3 {
+cards-paragraph h3 {
   font-family: "Noto Serif", serif;
   font-size: 2rem;
   padding-bottom: 10px; 
 
 }
 
-p{
+cards-paragraph p{
   font-family: "Inter", sans-serif;
   font-size: 1rem;
 }

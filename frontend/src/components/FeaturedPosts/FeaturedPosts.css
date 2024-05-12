@@ -27,6 +27,8 @@
   justify-content: space-between;
   display: flex;
   overflow: hidden;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
 }
 
 .title-post {
@@ -53,7 +55,3 @@
   margin-bottom: 20px;
 }
 
-p {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-}
