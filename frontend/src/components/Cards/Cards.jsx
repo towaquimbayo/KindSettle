@@ -9,7 +9,7 @@ const Cards = () => {
     <div>
       <h1 className="header">How it works</h1>
 
-      <div className="flex-container">
+      <div className="flex-container cards-paragraph">
         <div className="flex-item">
           <div className="column">
             {/* place holder for now  */}
