@@ -3,6 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 export default function Button({
   type = "button",
   title,
+  outline = false,
   onClick = () => {},
   loading,
   text,
@@ -11,6 +12,15 @@ export default function Button({
   disabled = false,
   customStyle,
 }) {
+  const btnClassNames = [
+    "btnPrimary",
+    outline ? "outline" : "",
+    full ? "full" : "",
+    disabled ? "disabled" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <button
       type={type}
@@ -22,9 +32,7 @@ export default function Button({
         }
         onClick(e);
       }}
-      className={
-        `btnPrimary` + (full ? " full" : "") + (disabled ? " disabled" : "")
-      }
+      className={btnClassNames}
       style={{ ...customStyle }}
     >
       {loading ? (
