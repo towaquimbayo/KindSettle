@@ -24,6 +24,7 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.6.3",
+    "ottoman": "^2.4.0",
     "typescript": "^4.9.4",
     "zod": "^3.20.2"
   },
