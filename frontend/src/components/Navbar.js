@@ -19,8 +19,8 @@ export default function Navbar({ transparent = false }) {
           </Link>
         </div>
         <div className="navLinksContainer">
-          <NavLink className="navLink" to="/#how-it-works">
-            How It Works
+          <NavLink className="navLink" to="/alimony-calculator">
+            Calculator
           </NavLink>
           {isLoggedIn && (
             <>

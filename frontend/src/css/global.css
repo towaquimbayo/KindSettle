@@ -240,3 +240,16 @@ input, textarea, button {
     padding: 0 1.5rem;
   }
 }
+
+.alimonyCalculator .result {
+  padding-left: 1.25rem;
+  padding-block: 0.75rem;
+  margin-bottom: 2rem;
+  border-left: solid 6px var(--primaryColor);
+  /* add background color of primaryColor but lower opacity */
+  background-color: rgba(20, 109, 88, 0.1);
+}
+
+.alimonyCalculator .result h2 {
+  font-size: 2.5rem;
+}
