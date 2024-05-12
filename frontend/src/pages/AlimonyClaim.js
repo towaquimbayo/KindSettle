@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { Field } from "../components/Field";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
@@ -11,7 +10,6 @@ import ClaimSuccessForm from "../components/ClaimSuccesForm";
 
 export default function AlimonyClaim() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const totalStep = 7;
   let [currentStep, setCurrentStep] = useState(0);
