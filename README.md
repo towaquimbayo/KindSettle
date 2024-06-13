@@ -17,6 +17,10 @@ _Check out the live project [_here_](https://kindsettle.com/)._
   * [Installation](#installation)
   * [Environment Variables Setup](#environment-variables-setup)
   * [Run The App](#run-the-app)
+* [Features](#features)
+  * [User Authentication](#user-authentication)
+  * [Alimony Calculator](#alimony-calculator)
+  * [Alimony Claims System](#alimony-claims-system)
 * [Awards](#awards)
 
 ## Screenshots
@@ -144,6 +148,30 @@ npm run start // running in production mode
 ```
 
 </details>
+
+## Features
+
+### User Authentication
+
+Our authentication system ensures secure access to the application using JSON Web Tokens (JWT). Users can sign up and log in with a simple system requiring standard information: name, email, and password. Although we do not have a profile management system yet, our current setup provides robust security and session management.
+
+* __Secure Authentication__: Implemented with JWT for secure authentication and session management.
+* __Signup and Login__: Simple registration process and login system requiring name, email, and password.
+* __Session Management__: Effective management of user sessions for security and ease of use.
+
+### Alimony Calculator
+
+Estimate your potential alimony payments with ease and accuracy using our simple calculator. By entering your monthly pay, co-parent's monthly pay, number of children, and percentage of time with children, the calculator provides a reliable estimate of your alimony payments. Our system is based on the income shares model, ensuring fair and accurate calculations. For more information on how child support is calculated, you can refer to [this resource here](https://divorce.com/blog/how-is-child-support-calculated/).
+
+* __Income Shares Model__: Based on a widely used model in the United States (US) for accurate calculations.
+
+### Alimony Claims System
+
+Manage your alimony claims efficiently with our comprehensive alimony claims system. Users can add, edit, and view their alimony claims seamlessly. The claim creation process involves a series of form steps to enter personal information, co-parent information, number of children, monthly net income, and more. After you file your half of the claim, your co-parent is required to sign up and complete their half. Once both halves are submitted, the claim can be viewed and finalized.
+
+* __Claim Management__: Add, edit, and view alimony claims.
+* __Collaborative Filing__: Both parties must complete their halves of the claim for submission to ensure the information is verified and correct.
+* __Review and Submit__: Claims can be reviewed and finalized once both parties have submitted their information.
 
 ## Awards
 
