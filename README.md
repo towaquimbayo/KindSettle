@@ -46,6 +46,7 @@ _Check out the live project [_here_](https://kindsettle.com/)._
 ## Technologies
 
 * React.js `v18.3.1`
+* CSS3
 * React Helmet `v6.1.0`
 * React Redux `v9.1.2`
 * Redux `v5.0.1`
