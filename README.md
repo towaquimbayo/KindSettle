@@ -5,6 +5,9 @@
 ![KindSettle Thumbnail](screenshots/kindsettle-thumbnail.jpg)
 An innovative legal mediation platform tailored for co-parents. It facilitates the resolution of child support matters post-divorce, eliminating the need for court involvement, thus saving time and money.
 
+> [!IMPORTANT]
+> Due to production issues on Couchbase's side, the database in production is currently not functioning. However, the database works correctly in the local development environment. We are actively working to resolve this issue and restore full functionality.
+
 _Check out the live project [_here_](https://kindsettle.com/)._
 
 ## Table of Contents
