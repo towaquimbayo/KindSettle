@@ -54,6 +54,7 @@ _Check out the live project [_here_](https://kindsettle.com/)._
 * Couchbase `v4.3.1`
 * Express `v4.18.2`
 * JWT Authentication `v9.0.0`
+* Node.js
 * Nodemailer `v6.9.13`
 * Nodemon `v2.0.20`
 * Ottoman `v2.4.0`
