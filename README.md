@@ -82,13 +82,13 @@ _Check out the live project [_here_](https://kindsettle.com/)._
 
 ### Installation
 
-1. Install latest npm package version.
+1. Install the latest npm package version.
 
   ```sh
   npm install npm@latest -g
   ```
 
-2. Clone the repository to local machine.
+2. Clone the repository to your local machine.
 
   ```sh
   git clone https://github.com/towaquimbayo/KindSettle.git
@@ -96,14 +96,14 @@ _Check out the live project [_here_](https://kindsettle.com/)._
 
 3. Installing required dependencies requires Node and npm.
 
-  Change directory to Frontend and install dependencies:
+  Change the directory to Frontend and install dependencies:
 
   ```sh
   cd frontend
   npm install
   ```
 
-  Change directory to Backend and install dependencies:
+  Change the directory to Backend and install dependencies:
 
   ```sh
   cd backend
@@ -135,7 +135,7 @@ In order to run the application, you would need the client (frontend) and server
 
 #### Client-Side Usage (Frontend) on PORT: 3000
 
-Change directory to client (`frontend`) and execute `npm start` to run locally in development mode or production mode. For production, make sure to build the app to the `build` folder by executing `npm run build` as this would correctly bundle React in production mode and optimize the build for the best performance.
+Change the directory to the client (`frontend`) and execute `npm start` to run locally in development mode or production mode. For production, make sure to build the app to the `build` folder by executing `npm run build` as this would correctly bundle React in production mode and optimize the build for the best performance.
 
 ```sh
 cd frontend
@@ -144,7 +144,7 @@ npm start
 
 #### Server-Side Usage (Backend) on PORT: 8080
 
-Change directory to server (`backend`) and execute `npm run dev` to run locally in development mode or execute `npm start` to run in production mode. For production, make sure to build the app to the `dist` folder by executing `npm run build` as this would correctly compile TypeScript code to ES5 JavaScript codes and optimize the build for the best performance.
+Change the directory to the server (`backend`) and execute `npm run dev` to run locally in development mode or execute `npm start` to run in production mode. For production, make sure to build the app to the `dist` folder by executing `npm run build` as this would correctly compile TypeScript code to ES5 JavaScript codes and optimize the build for the best performance.
 
 ```sh
 cd backend
@@ -180,7 +180,7 @@ Manage your alimony claims efficiently with our comprehensive alimony claims sys
 
 ## Awards
 
-KindSettle has received significant recognition for its impact and innovative use of technology. At the Beeloud & Build AI Hackathon, we were honored with the following awards:
+KindSettle has received significant recognition for its impact and innovative use of technology. At the Beeloud & Build AI Hackathon, we were honoured with the following awards:
 
 * __1st Place Certification for "Most Impactful"__: Our project stood out for its potential to make a meaningful difference in the lives of co-parents, simplifying legal mediation and reducing the need for court involvement.
 * __1st Place Certification for "Best Use of Couchbase Database"__: By leveraging Couchbase, we efficiently managed and stored data, showcasing our effective use of this powerful technology. Couchbase, one of the event's sponsors, acknowledged our exceptional implementation of their database solutions.
