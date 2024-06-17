@@ -187,4 +187,4 @@ KindSettle has received significant recognition for its impact and innovative us
 
 These awards reflect our commitment to creating a high-impact, user-friendly platform using cutting-edge technologies.
 
-For more details, you can read the full article on [Couchbase's blog here](https://www.couchbase.com/blog/beeloud-and-build-hackathon-2024/) and our [Devpost submission here](https://devpost.com/software/kindsettle-com-child-support-made-easy).
+For more details, you can read the full article on Couchbase's blog [here](https://www.couchbase.com/blog/beeloud-and-build-hackathon-2024/) and our Devpost submission [here](https://devpost.com/software/kindsettle-com-child-support-made-easy).
