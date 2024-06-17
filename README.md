@@ -183,7 +183,7 @@ Manage your alimony claims efficiently with our comprehensive alimony claims sys
 KindSettle has received significant recognition for its impact and innovative use of technology. At the Beeloud & Build AI Hackathon, we were honoured with the following awards:
 
 * __1st Place Certification for "Most Impactful"__: Our project stood out for its potential to make a meaningful difference in the lives of co-parents, simplifying legal mediation and reducing the need for court involvement.
-* __1st Place Certification for "Best Use of Couchbase Database"__: By leveraging Couchbase, we efficiently managed and stored data, showcasing our effective use of this powerful technology. Couchbase, one of the event's sponsors, acknowledged our exceptional implementation of their database solutions.
+* __1st Place Certification for "Best Use of Couchbase Database"__: By leveraging Couchbase, we efficiently managed and stored data, showcasing our effective use of this powerful technology, earning us a $1,000 prize. Couchbase, one of the event's sponsors, acknowledged our exceptional implementation of their database solutions.
 
 These awards reflect our commitment to creating a high-impact, user-friendly platform using cutting-edge technologies.
 
